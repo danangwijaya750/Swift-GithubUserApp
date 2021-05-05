@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,14 @@
 		47280368263AAD1B00D89C06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47280367263AAD1B00D89C06 /* Preview Assets.xcassets */; };
 		47280373263AAD1B00D89C06 /* Githup_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47280372263AAD1B00D89C06 /* Githup_AppTests.swift */; };
 		4728037E263AAD1B00D89C06 /* Githup_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728037D263AAD1B00D89C06 /* Githup_AppUITests.swift */; };
+		4797161C2642F89F008710AA /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 4797161B2642F89F008710AA /* SwiftUIX */; };
+		4797161F2643023A008710AA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797161E2643023A008710AA /* ExploreViewModel.swift */; };
+		47971622264309C8008710AA /* SearchBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47971621264309C8008710AA /* SearchBarComponent.swift */; };
+		47BF71AE263FCBEA007FDB3F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF71AD263FCBEA007FDB3F /* UserModel.swift */; };
+		47BF71B0263FCDBF007FDB3F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF71AF263FCDBF007FDB3F /* HomeViewModel.swift */; };
+		47BF71B3263FD530007FDB3F /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 47BF71B2263FD530007FDB3F /* URLImage */; };
+		47EC555326426FFA00906DA0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EC555226426FFA00906DA0 /* HomeView.swift */; };
+		47EC55562642706800906DA0 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EC55552642706800906DA0 /* ExploreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,12 @@
 		47280379263AAD1B00D89C06 /* Githup AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Githup AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4728037D263AAD1B00D89C06 /* Githup_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Githup_AppUITests.swift; sourceTree = "<group>"; };
 		4728037F263AAD1B00D89C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4797161E2643023A008710AA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		47971621264309C8008710AA /* SearchBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarComponent.swift; sourceTree = "<group>"; };
+		47BF71AD263FCBEA007FDB3F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		47BF71AF263FCDBF007FDB3F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		47EC555226426FFA00906DA0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		47EC55552642706800906DA0 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BF71B3263FD530007FDB3F /* URLImage in Frameworks */,
+				4797161C2642F89F008710AA /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +111,10 @@
 		4728035F263AAD1A00D89C06 /* Githup App */ = {
 			isa = PBXGroup;
 			children = (
+				47EC554F26426D7100906DA0 /* UI */,
+				47BF71AC263FCADD007FDB3F /* ViewModel */,
+				47BF71AB263FCAD6007FDB3F /* Models */,
 				47280360263AAD1A00D89C06 /* Githup_AppApp.swift */,
-				47280362263AAD1A00D89C06 /* ContentView.swift */,
 				47280364263AAD1B00D89C06 /* Assets.xcassets */,
 				47280369263AAD1B00D89C06 /* Info.plist */,
 				47280366263AAD1B00D89C06 /* Preview Content */,
@@ -130,6 +148,58 @@
 			path = "Githup AppUITests";
 			sourceTree = "<group>";
 		};
+		47971620264309B6008710AA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				47971621264309C8008710AA /* SearchBarComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		47BF71AB263FCAD6007FDB3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47BF71AD263FCBEA007FDB3F /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47BF71AC263FCADD007FDB3F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				47BF71AF263FCDBF007FDB3F /* HomeViewModel.swift */,
+				4797161E2643023A008710AA /* ExploreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47EC554F26426D7100906DA0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				47971620264309B6008710AA /* Component */,
+				47EC55542642705000906DA0 /* Explore */,
+				47EC555126426FE100906DA0 /* Home */,
+				47280362263AAD1A00D89C06 /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		47EC555126426FE100906DA0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				47EC555226426FFA00906DA0 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		47EC55542642705000906DA0 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				47EC55552642706800906DA0 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +216,10 @@
 			dependencies = (
 			);
 			name = "Githup App";
+			packageProductDependencies = (
+				47BF71B2263FD530007FDB3F /* URLImage */,
+				4797161B2642F89F008710AA /* SwiftUIX */,
+			);
 			productName = "Githup App";
 			productReference = 4728035D263AAD1A00D89C06 /* Githup App.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +291,11 @@
 				Base,
 			);
 			mainGroup = 47280354263AAD1A00D89C06;
+			packageReferences = (
+				47BF71B1263FD530007FDB3F /* XCRemoteSwiftPackageReference "url-image" */,
+				4797161A2642F89F008710AA /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				4797161D26430070008710AA /* XCRemoteSwiftPackageReference "amplify-ios" */,
+			);
 			productRefGroup = 4728035E263AAD1A00D89C06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,7 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				47280363263AAD1A00D89C06 /* ContentView.swift in Sources */,
+				47971622264309C8008710AA /* SearchBarComponent.swift in Sources */,
+				47BF71AE263FCBEA007FDB3F /* UserModel.swift in Sources */,
+				47BF71B0263FCDBF007FDB3F /* HomeViewModel.swift in Sources */,
+				47EC555326426FFA00906DA0 /* HomeView.swift in Sources */,
+				47EC55562642706800906DA0 /* ExploreView.swift in Sources */,
 				47280361263AAD1A00D89C06 /* Githup_AppApp.swift in Sources */,
+				4797161F2643023A008710AA /* ExploreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +665,46 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4797161A2642F89F008710AA /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+		4797161D26430070008710AA /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+		47BF71B1263FD530007FDB3F /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4797161B2642F89F008710AA /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4797161A2642F89F008710AA /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+		47BF71B2263FD530007FDB3F /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47BF71B1263FD530007FDB3F /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 47280355263AAD1A00D89C06 /* Project object */;
 }
