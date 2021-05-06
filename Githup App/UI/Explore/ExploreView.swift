@@ -14,12 +14,15 @@ struct Explore:View {
     @ObservedObject var viewModel = ExploreViewModel()
     var body: some View{
         NavigationView{
-            VStack{
+            List{
                 SearchBar(text: $query,onTextChanged: searchUser)
-                SearchContent(users:viewModel.res.items)
+                ForEach(viewModel.res.items){it in
+                NavigationLink(destination: DetailUserView(user: it)){
+                        SearchRow(data:it)
+                }
+                }
             }
-            .navigationTitle("Explore")
-           
+            .navigationBarTitle("Explore")
         }
     }
     func searchUser(for search:String) {
@@ -29,19 +32,10 @@ struct Explore:View {
     }
 }
 
-struct SearchContent:View {
-    let users:[UserModel]
-    var body: some View{
-        List(users){it in
-            SearchRow(data:it)
-        }
-    }
-}
-
 struct SearchRow:View {
     let data:UserModel
     var body: some View{
-        HStack(spacing:20){
+        HStack(){
             URLImage(url: URL(string: data.avatar_url)!) { image in
                 image.resizable()
                     .frame(width: 80, height: 80)

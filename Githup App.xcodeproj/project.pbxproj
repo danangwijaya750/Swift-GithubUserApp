@@ -13,6 +13,7 @@
 		47280368263AAD1B00D89C06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47280367263AAD1B00D89C06 /* Preview Assets.xcassets */; };
 		47280373263AAD1B00D89C06 /* Githup_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47280372263AAD1B00D89C06 /* Githup_AppTests.swift */; };
 		4728037E263AAD1B00D89C06 /* Githup_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728037D263AAD1B00D89C06 /* Githup_AppUITests.swift */; };
+		474E168E26445E3200B219DA /* DetailUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E168D26445E3200B219DA /* DetailUserView.swift */; };
 		4797161C2642F89F008710AA /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 4797161B2642F89F008710AA /* SwiftUIX */; };
 		4797161F2643023A008710AA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797161E2643023A008710AA /* ExploreViewModel.swift */; };
 		47971622264309C8008710AA /* SearchBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47971621264309C8008710AA /* SearchBarComponent.swift */; };
@@ -53,6 +54,7 @@
 		47280379263AAD1B00D89C06 /* Githup AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Githup AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4728037D263AAD1B00D89C06 /* Githup_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Githup_AppUITests.swift; sourceTree = "<group>"; };
 		4728037F263AAD1B00D89C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		474E168D26445E3200B219DA /* DetailUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserView.swift; sourceTree = "<group>"; };
 		4797161E2643023A008710AA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		47971621264309C8008710AA /* SearchBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarComponent.swift; sourceTree = "<group>"; };
 		47BF71AD263FCBEA007FDB3F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = "Githup AppUITests";
 			sourceTree = "<group>";
 		};
+		474E168C26445E1C00B219DA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				474E168D26445E3200B219DA /* DetailUserView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		47971620264309B6008710AA /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		47EC554F26426D7100906DA0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				474E168C26445E1C00B219DA /* Detail */,
 				47971620264309B6008710AA /* Component */,
 				47EC55542642705000906DA0 /* Explore */,
 				47EC555126426FE100906DA0 /* Home */,
@@ -344,6 +355,7 @@
 				47BF71B0263FCDBF007FDB3F /* HomeViewModel.swift in Sources */,
 				47EC555326426FFA00906DA0 /* HomeView.swift in Sources */,
 				47EC55562642706800906DA0 /* ExploreView.swift in Sources */,
+				474E168E26445E3200B219DA /* DetailUserView.swift in Sources */,
 				47280361263AAD1A00D89C06 /* Githup_AppApp.swift in Sources */,
 				4797161F2643023A008710AA /* ExploreViewModel.swift in Sources */,
 			);

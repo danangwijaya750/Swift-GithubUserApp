@@ -23,7 +23,9 @@ struct ListContent:View{
     @ObservedObject var viewModel = HomeViewModel()
     var body: some View{
         List(viewModel.users){it in
+            NavigationLink(destination: DetailUserView(user: it)){
                 RowContent(data:it)
+            }
         }
         .onAppear{
             self.viewModel.getUserHome()
