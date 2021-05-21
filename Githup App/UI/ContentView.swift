@@ -21,10 +21,10 @@ struct ContentView: View {
                         Image(systemName: "paperplane.fill")
                         Text("Explore")
                     }
-                Home()
+                AboutView()
                     .tabItem {
-                        Image(systemName: "star.fill")
-                        Text("Bookmark")
+                        Image(systemName: "person.fill")
+                        Text("About")
                     }
             }
         }

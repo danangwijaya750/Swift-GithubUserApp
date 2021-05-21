@@ -14,15 +14,20 @@ struct Explore:View {
     @ObservedObject var viewModel = ExploreViewModel()
     var body: some View{
         NavigationView{
+            ZStack{
+                VStack(spacing:0){
+                    SearchBar(text: $query,onSearchButtonClicked: searchUser)
             List{
-                SearchBar(text: $query,onTextChanged: searchUser)
                 ForEach(viewModel.res.items){it in
                 NavigationLink(destination: DetailUserView(user: it)){
                         SearchRow(data:it)
                 }
                 }
             }
-            .navigationBarTitle("Explore")
+                    
+                }
+                ProgressView().isHidden(!viewModel.loading)
+            }.navigationBarTitle("Explore")
         }
     }
     func searchUser(for search:String) {

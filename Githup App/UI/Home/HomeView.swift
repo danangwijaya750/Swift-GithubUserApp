@@ -10,29 +10,22 @@ import SwiftUI
 import URLImage
 
 struct Home: View{
+    @ObservedObject var viewModel = HomeViewModel()
     var body: some View{
         NavigationView{
-            ListContent()
+            ZStack{
+                List(viewModel.users){it in
+                    NavigationLink(destination: DetailUserView(user: it)){
+                        RowContent(data:it)
+                    }
+                }
+                ProgressView().isHidden(!viewModel.loading)
+            }
             .navigationTitle("Github User App")
         }.navigationViewStyle(StackNavigationViewStyle())
         
     }
 }
-
-struct ListContent:View{
-    @ObservedObject var viewModel = HomeViewModel()
-    var body: some View{
-        List(viewModel.users){it in
-            NavigationLink(destination: DetailUserView(user: it)){
-                RowContent(data:it)
-            }
-        }
-        .onAppear{
-            self.viewModel.getUserHome()
-        }
-    }
-}
-
 
 struct RowContent :View {
     let data:UserModel

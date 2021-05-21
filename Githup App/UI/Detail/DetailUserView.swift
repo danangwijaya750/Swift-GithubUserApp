@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 import URLImage
 struct DetailUserView:View {
+    @ObservedObject var viewModel = DetailViewModel()
     let user:UserModel
     var body: some View{
-        VStack{
+        ZStack{
+            VStack{
             URLImage(url: URL(string: user.avatar_url)!){image in
                 image.resizable()
                     .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
@@ -19,11 +21,15 @@ struct DetailUserView:View {
             }
             VStack(alignment:.leading){
                 Text(user.login).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    Text(user.organizations_url)
+                Text(viewModel.res.company ?? "default")
                         .font(.subheadline)
-                    Text(user.repos_url)
+                Text(viewModel.res.createdAt)
             }.padding()
-        }.edgesIgnoringSafeArea(.top)
+            }.onAppear{
+                viewModel.getDetail(for: user.login)
+            }
+            ProgressView().isHidden(!viewModel.loading)
+        }
+        
     }
 }
-
