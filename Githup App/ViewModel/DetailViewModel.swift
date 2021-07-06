@@ -11,7 +11,9 @@ import Combine
 class DetailViewModel:ObservableObject {
     @Published var res = UserDetailModel()
     private var disposeBag = Set<AnyCancellable>()
+    private let persistenceController = PersistenceController.shared
     @Published var loading=false
+    @Published var isFav=false
     func getDetail(for login:String){
         print(login)
         self.doGetDetail(for: login)
@@ -30,6 +32,17 @@ class DetailViewModel:ObservableObject {
             .assign(to:\.res,on:self)
             .store(in: &disposeBag)
         
+    }
+    func checkIsFavourite(userModel:UserModel){
+        self.isFav=persistenceController.checkData(data: userModel)
+    }
+    func addFavourite(userModel: UserModel) {
+        persistenceController.addFavourite(data: userModel)
+        self.isFav=true
+    }
+    func deleteFavourite(userModel: UserModel) {
+        persistenceController.removeFavourite(data: userModel)
+        self.isFav=false
     }
     func doGetDetail(for login:String)->AnyPublisher<UserDetailModel,Error>{
         guard let url = URL(string: "https://api.github.com/users/\(login)") else {

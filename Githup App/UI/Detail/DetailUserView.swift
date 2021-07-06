@@ -16,17 +16,51 @@ struct DetailUserView:View {
             VStack{
             URLImage(url: URL(string: user.avatar_url)!){image in
                 image.resizable()
-                    .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    .frame(width: 200, height: 200)
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             }
-            VStack(alignment:.leading){
-                Text(user.login).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text(viewModel.res.company ?? "default")
-                        .font(.subheadline)
-                Text(viewModel.res.createdAt)
-            }.padding()
+                HStack{
+                    Text(user.login).font(.title)
+                    Button(action:{
+                        if(viewModel.isFav){
+                            viewModel.deleteFavourite(userModel: user)
+                        }else{
+                            viewModel.addFavourite(userModel: user)
+                        }
+                    }){
+                        if(viewModel.isFav){
+                            Image(systemName: "bookmark.fill")
+                        }else{
+                            Image(systemName: "bookmark")
+                        }
+                    }.padding()
+                }
+                VStack(alignment: .leading, spacing: 10){
+                HStack{
+                    Image(systemName: "person")
+                    Text(viewModel.res.name ?? "No Name")
+                }
+                HStack{
+                    Image(systemName: "envelope")
+                    Text(viewModel.res.email ?? "No Email")
+                }
+                HStack{
+                    Image(systemName: "flag")
+                    Text(viewModel.res.company ?? "No Company")
+                }
+                HStack{
+                    Image(systemName: "location")
+                    Text(viewModel.res.location ?? "No Address")
+                }
+                HStack{
+                    Image(systemName: "book")
+                    Text(viewModel.res.bio ?? "No Bio")
+                }
+                }.padding()
+            Spacer()
             }.onAppear{
                 viewModel.getDetail(for: user.login)
+                viewModel.checkIsFavourite(userModel: user)
             }
             ProgressView().isHidden(!viewModel.loading)
         }
